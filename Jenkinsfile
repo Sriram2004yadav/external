@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools {
-        mvn 'Maven3'
+        maven 'Maven3'
         jdk 'JDK1'
     }
     stages {
@@ -12,7 +12,7 @@ pipeline{
         }
         stage('test') {
             steps {
-                mvn clean test
+                maven clean test
                 javac Calculator.java
                 java Calculator
             }
