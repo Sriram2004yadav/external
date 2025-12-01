@@ -12,7 +12,8 @@ pipeline{
         }
         stage('test') {
             steps {
-                maven clean package
+                maven clean 
+                maven test
                 javac Calculator.java
                 java Calculator
             }
