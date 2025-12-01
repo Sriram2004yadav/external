@@ -1,8 +1,8 @@
 pipeline{
     agent any
     tools {
-        maven 'Maven3'
-        jdk 'JDK17'
+        maven 'Maven3.8.4'
+        jdk 'JDK11'
     }
     stages {
         stage('pull') {
@@ -12,8 +12,12 @@ pipeline{
         }
         stage('test') {
             steps {
-                javac Calculator.java
-                java Calculator
+                sh 'mvn test'
+            }
+        }
+        stahge('build') {
+            steps {
+                sh 'mvn package'
             }
         }
         stage('Archive') {
