@@ -7,9 +7,9 @@ pipeline{
                 checkout scm
             }
         }
-        stage('Build') {
+        stage('test') {
             steps {
-                bat 'python3 calculator.py'
+                bat 'python3 -m calculator.py'
             }
         }
         stage('Archive') {
