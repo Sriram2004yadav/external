@@ -1,6 +1,9 @@
 pipeline{
     agent any
-
+    tools {
+        maven 'Maven3.8.4'
+        jdk 'JDK11'
+    }
     stages {
         stage('pull') {
             steps {
