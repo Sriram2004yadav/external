@@ -9,7 +9,7 @@ pipeline{
         }
         stage('test') {
             steps {
-                mvn clean Build
+                mvn clean test
                 javac Calculator.java
                 java Calculator
             }
