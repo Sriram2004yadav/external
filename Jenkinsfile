@@ -14,7 +14,7 @@ pipeline{
         }
         stage('archive') {
             steps {
-                Archive
+                Archive artifacts artifacts: 'calculator.py', fingerprint: true
             }
         }
     }
