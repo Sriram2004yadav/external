@@ -9,12 +9,13 @@ pipeline{
         }
         stage('test') {
             steps {
-                echo 'test stage'
+                mvn clean Build
+                javac Calculator.java
             }
         }
         stage('Archive') {
             steps {
-                archiveArtifacts artifacts: 'calculator.py', fingerprint: true
+                archiveArtifacts artifacts: '**/*.jar', fingerprint: true
             }
         }
     }
