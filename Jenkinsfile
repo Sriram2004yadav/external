@@ -2,17 +2,17 @@ pipepline{
     agent any
 
     stages {
-        stage('pull') {
+        stage('checkout') {
             steps {
                 checkout scm
             }
         }
-        stage('Build') {
+        stage('build') {
             steps {
                 bat "python calculator.py"
             }
         }
-        stage('Archive') {
+        stage('archive') {
             steps {
                 Archive
             }
