@@ -9,7 +9,7 @@ pipeline{
         }
         stage('test') {
             steps {
-                bat 'python calculator.py'
+                bat 'py calculator.py'
             }
         }
         stage('Archive') {
