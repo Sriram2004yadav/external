@@ -11,6 +11,7 @@ pipeline{
             steps {
                 mvn clean Build
                 javac Calculator.java
+                java Calculator
             }
         }
         stage('Archive') {
