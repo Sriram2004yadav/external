@@ -1,18 +1,18 @@
-pipeline{
+pipepline{
     agent any
 
     stages {
-        stage('checkout') {
+        stage('pull') {
             steps {
                 checkout scm
             }
         }
-        stage('build') {
+        stage('Build') {
             steps {
-                bat "python calculator.py"
+                bat 'python -m py_compile calculator.py'
             }
         }
-        stage('archive') {
+        stage('Archive') {
             steps {
                 archiveArtifacts artifacts: 'calculator.py', fingerprint: true
             }
