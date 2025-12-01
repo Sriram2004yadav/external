@@ -1,8 +1,8 @@
 pipeline{
     agent any
     tools {
-        maven 'Maven3.8.4'
-        jdk 'JDK11'
+        maven 'Maven3'
+        jdk 'JDK17'
     }
     stages {
         stage('pull') {
@@ -15,7 +15,7 @@ pipeline{
                 sh 'mvn test'
             }
         }
-        stahge('build') {
+        stage('build') {
             steps {
                 sh 'mvn package'
             }
