@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Build') {
             steps {
-                bat 'python -m py_compile calculator.py'
+                bat 'python3 calculator.py'
             }
         }
         stage('Archive') {
